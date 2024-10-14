@@ -26,12 +26,12 @@ app.get('/', (req, res) => {
 });
 
 // Main Index POST
-app.use('/api/pitch/index', require('./api/index'));
-app.use('/api/pitch/index/json', require('./api/index-json'));
+app.use('/api/index', require('./api/index'));
+app.use('/api/index/json', require('./api/index-json'));
 
 // Data Decrypt / Encrypt
-app.use('/api/pitch/DecryptApi', require('./api/DecryptApi.js'));
-app.use('/api/pitch/EncryptApi', require('./api/EncryptApi.js'));
+app.use('/api/DecryptApi', require('./api/DecryptApi.js'));
+app.use('/api/EncryptApi', require('./api/EncryptApi.js'));
 
 
 if (isHttpsEnabled == 'true') {
@@ -40,14 +40,32 @@ if (isHttpsEnabled == 'true') {
         key: fs.readFileSync('./certificate/unfyd_2023-decrypted.key')
     };
     // Create an HTTPS service identical to the HTTP service.
-    https.createServer(options, app).listen(process.env.PORT, () => {
-        console.log(`Server started running on ${process.env.PORT} for ${process.env.NODE_ENV}`);
+    https.createServer(options, app).listen(4000, () => {
+        console.log(`Server started running on ${4000} for ${development}`);
     });
 }
 else {
     // Create an HTTP service.
-    http.createServer(app).listen(process.env.PORT, () => {
-        console.log(`Server started running on ${process.env.PORT} for ${process.env.NODE_ENV}`);
+    http.createServer(app).listen(4000, () => {
+        console.log(`Server started running on ${4000} for ${development}`);
         // console.log('Ishttps:' + isHttpsEnabled);
     });
 }
+
+// if (isHttpsEnabled == 'true') {
+//     const options = {
+//         cert: fs.readFileSync('./certificate/unfyd_2023crt.crt'),
+//         key: fs.readFileSync('./certificate/unfyd_2023-decrypted.key')
+//     };
+//     // Create an HTTPS service identical to the HTTP service.
+//     https.createServer(options, app).listen(process.env.PORT, () => {
+//         console.log(`Server started running on ${process.env.PORT} for ${process.env.NODE_ENV}`);
+//     });
+// }
+// else {
+//     // Create an HTTP service.
+//     http.createServer(app).listen(process.env.PORT, () => {
+//         console.log(`Server started running on ${process.env.PORT} for ${process.env.NODE_ENV}`);
+//         // console.log('Ishttps:' + isHttpsEnabled);
+//     });
+// }
