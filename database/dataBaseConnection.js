@@ -1,16 +1,27 @@
 const mssql = require('mssql');
 const dotenv = require('dotenv');
 dotenv.config();
+console.log("process.hostname>>>>>>>>>>>>",process.env.MSSQL_HOST); 
 var config = {
 
-    user: process.env.MSSQL_USER,
-    password: process.env.MSSQL_PASS,
-    database: process.env.MSSQL_DBNAME,
-    server: process.env.MSSQL_HOST,
+    // user: process.env.MSSQL_USER,
+    // password: process.env.MSSQL_PASS,
+    // database: process.env.MSSQL_DBNAME,
+    // server: process.env.MSSQL_HOST,
+    // dialect: "mssql",
+    // // for local port is used
+    // port:Number(process.env.MSSQL_PORT),
+    // //////////////////////////
+
+    user: "rajkiran_",
+    password: "April@125",
+    database: "rajkiran_",
+    server: "sql.bsite.net\MSSQL2016",
     dialect: "mssql",
     // for local port is used
-    port:Number(process.env.MSSQL_PORT),
+    port:Number(1433),
     //////////////////////////
+
 
 
     dialectOptions: {
