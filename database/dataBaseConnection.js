@@ -1,6 +1,7 @@
 const mssql = require('mssql');
 const dotenv = require('dotenv');
 dotenv.config();
+// let server = "sql.bsite.net\MSSQL2016"
 var config = {
 
     // user: process.env.MSSQL_USER,

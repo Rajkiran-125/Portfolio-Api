@@ -41,13 +41,13 @@ if (isHttpsEnabled == 'true') {
     };
     // Create an HTTPS service identical to the HTTP service.
     https.createServer(options, app).listen(4000, () => {
-        console.log(`Server started running on ${4000} for ${development}`);
+        console.log(`Server started running on ${4000} for deployment`);
     });
 }
 else {
     // Create an HTTP service.
     http.createServer(app).listen(4000, () => {
-        console.log(`Server started running on ${4000} for ${development}`);
+        console.log(`Server started running on ${4000} for deployment`);
         // console.log('Ishttps:' + isHttpsEnabled);
     });
 }
