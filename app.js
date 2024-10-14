@@ -26,12 +26,12 @@ app.get('/', (req, res) => {
 });
 
 // Main Index POST
-app.use('/api/pitch/index', require('./api/index'));
-app.use('/api/pitch/index/json', require('./api/index-json'));
+app.use('/api/index', require('./api/index'));
+app.use('/api/index/json', require('./api/index-json'));
 
 // Data Decrypt / Encrypt
-app.use('/api/pitch/DecryptApi', require('./api/DecryptApi.js'));
-app.use('/api/pitch/EncryptApi', require('./api/EncryptApi.js'));
+app.use('/api/DecryptApi', require('./api/DecryptApi.js'));
+app.use('/api/EncryptApi', require('./api/EncryptApi.js'));
 
 
 if (isHttpsEnabled == 'true') {
