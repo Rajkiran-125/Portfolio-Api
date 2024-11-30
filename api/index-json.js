@@ -16,7 +16,7 @@ router.post('/',getipaddress, async (req, res,next) => {
 // router.post('/', async (req, res) => {
     try {
 
-		console.log("index-json.js  req body >>>>>", req.body.data)
+		// console.log("index-json.js  req body >>>>>", req.body.data)
 		var parameters = [] 
 		// console.log('parameters',parameters)
 		parameters = req.body.data.parameters;
@@ -57,7 +57,7 @@ router.post('/',getipaddress, async (req, res,next) => {
 					res.status(400).json(error(err.message,res.statusCode));
 				}
 				try{
-					console.log("index-josn.js res >>>>>>>>>>",recordset);
+					// console.log("index-josn.js res >>>>>>>>>>",recordset);
 					if (recordset.recordsets.length > 1) {
 					res.json(success("Success", { data: recordset.recordsets }, res.statusCode));
 					}
