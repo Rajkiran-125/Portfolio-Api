@@ -34,7 +34,7 @@ app.use('/api/DecryptApi', require('./api/DecryptApi.js'));
 app.use('/api/EncryptApi', require('./api/EncryptApi.js'));
 
 // Server Keep alive
-// app.use('/app/corn', require('./api/corn.js'));
+app.use('/app/corn', require('./api/corn.js'));
 
 
 if (isHttpsEnabled == 'true') {
